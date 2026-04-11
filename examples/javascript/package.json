@@ -1,0 +1,9 @@
+{
+  "name": "kreach-api-examples",
+  "version": "1.0.0",
+  "description": "K-REACH Chemical Substance API - Example Code",
+  "scripts": {
+    "example": "node javascript_example.js"
+  },
+  "type": "module"
+}
