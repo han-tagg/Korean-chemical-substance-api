@@ -1,4 +1,3 @@
-[README (2).md](https://github.com/user-attachments/files/26646229/README.2.md)
 # K-REACH API Examples
 
 This folder contains ready-to-run example code for the K-REACH Chemical Substance API.
