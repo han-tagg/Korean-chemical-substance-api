@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-REACH Chemical Substance API — Korean Regulatory Data</title>
+  <meta name="description" content="REST API for 46,000+ Korean chemical substances. Regulatory classifications, GHS hazard data, daily-verified against KECO. Free tier available.">
+  <meta name="keywords" content="K-REACH API, Korea chemical substance database, Korean REACH regulation API, chemical compliance, GHS classification, KECO, data.go.kr">
+  <link rel="canonical" href="https://han-tagg.github.io/Korean-chemical-substance-api/">
+  <meta property="og:title" content="K-REACH Chemical Substance API — Korean Regulatory Data">
+  <meta property="og:description" content="REST API for 46,000+ Korean chemical substances. Regulatory classifications, GHS hazard data, daily-verified against KECO. Free tier available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://han-tagg.github.io/Korean-chemical-substance-api/">
+  <style>
+:root {
+  --ink: #1a1a2e;
+  --paper: #fafaf8;
+  --accent: #0a7e7a;
+  --accent-dark: #065a57;
+  --border: #e0e0dc;
+  --bg-box: #f3f3ee;
+  --code-bg: #2d2d2d;
+  --code-text: #f8f8f2;
+  --max-width: 720px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 17px;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+h1 { font-size: 2em; margin-bottom: 12px; letter-spacing: -0.5px; }
+h2 { font-size: 1.5em; margin: 40px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+h3 { font-size: 1.15em; margin: 28px 0 12px; }
+p { margin-bottom: 16px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  font-size: 14px;
+  text-align: center;
+}
+nav a { margin: 0 12px; color: var(--ink); }
+nav a:hover { color: var(--accent); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 15px;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th { background: var(--bg-box); font-weight: bold; }
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 20px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  margin: 16px 0 24px;
+  line-height: 1.5;
+}
+.cta-box {
+  background: var(--bg-box);
+  padding: 24px;
+  border-radius: 6px;
+  margin: 24px 0;
+  text-align: center;
+}
+.cta-box a {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.cta-box a:hover { background: var(--accent-dark); text-decoration: none; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.badge-toxic { background: #fee2e2; color: #991b1b; }
+.badge-restricted { background: #fef3c7; color: #92400e; }
+.badge-prohibited { background: #fecaca; color: #7f1d1d; }
+.badge-priority { background: #dbeafe; color: #1e40af; }
+.badge-cmr { background: #f3e8ff; color: #6b21a8; }
+.subtitle { color: #666; font-size: 0.9em; margin-bottom: 24px; }
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+ul { margin: 8px 0 16px 24px; }
+li { margin-bottom: 6px; }
+@media (max-width: 600px) {
+  h1 { font-size: 1.5em; }
+  table { font-size: 13px; }
+  th, td { padding: 8px 6px; }
+  nav a { margin: 0 6px; font-size: 13px; }
+}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebAPI",
+  "name": "K-REACH Chemical Substance API",
+  "description": "REST API for Korean chemical substance regulatory data and GHS hazard classifications. 46,000+ substances with daily verification.",
+  "url": "https://rapidapi.com/han8212/api/k-reach-chemical-substance-api",
+  "provider": {"@type": "Organization", "name": "han-tagg"},
+  "documentation": "https://github.com/han-tagg/Korean-chemical-substance-api"
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/">Home</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/benzene.html">Benzene</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/ethanol.html">Ethanol</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/formaldehyde.html">Formaldehyde</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/toxic-substances.html">Toxic</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/restricted-chemicals.html">Restricted</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">FAQ</a>
+</nav>
+<div class="container">
+
+<h1>K-REACH Chemical Substance API</h1>
+<p class="subtitle">Korean chemical substance regulatory database &mdash; structured REST API for global EHS compliance</p>
+
+<p>Access <strong>46,000+ chemical substances</strong> registered under Korea's Act on Registration and Evaluation of Chemicals (K-REACH). Get regulatory classifications, GHS hazard data, and compliance information through clean JSON endpoints.</p>
+
+<h2>What's Included</h2>
+<table>
+  <tr><th>Data</th><th>Coverage</th></tr>
+  <tr><td>Chemical Substances</td><td>46,000+ registered under K-REACH</td></tr>
+  <tr><td>Regulation Records</td><td>49,000+ across 9 classification types</td></tr>
+  <tr><td>GHS Hazard Data</td><td>83%+ coverage (signal words, H-codes, P-codes, pictograms)</td></tr>
+  <tr><td>Languages</td><td>English + Korean</td></tr>
+  <tr><td>Verification</td><td>Daily against official government sources</td></tr>
+</table>
+
+<h2>Regulatory Classifications</h2>
+<table>
+  <tr><th>Type</th><th>Korean</th><th>Description</th></tr>
+  <tr><td><span class="badge badge-toxic">Toxic</span></td><td>유독물질</td><td>Human and ecological toxicity</td></tr>
+  <tr><td><span class="badge badge-restricted">Restricted</span></td><td>제한물질</td><td>Conditional usage restrictions</td></tr>
+  <tr><td><span class="badge badge-prohibited">Prohibited</span></td><td>금지물질</td><td>Completely banned</td></tr>
+  <tr><td><span class="badge badge-priority">Priority</span></td><td>중점관리물질</td><td>Priority oversight substances</td></tr>
+  <tr><td><span class="badge badge-cmr">CMR</span></td><td>발암·변이원성</td><td>Carcinogenic, mutagenic, reprotoxic</td></tr>
+  <tr><td>Accident Prep</td><td>사고대비물질</td><td>Emergency response substances</td></tr>
+  <tr><td>Registration Req</td><td>등록대상기존화학물질</td><td>Existing chemicals requiring registration</td></tr>
+  <tr><td>Persistent</td><td>잔류성오염물질</td><td>Persistent organic pollutants</td></tr>
+  <tr><td>Rotterdam</td><td>로테르담협약물질</td><td>PIC procedure substances</td></tr>
+</table>
+
+<h2>API Endpoints</h2>
+<table>
+  <tr><th>Endpoint</th><th>Description</th><th>Tier</th></tr>
+  <tr><td><code>GET /v1/substance/cas/&#123;cas_no&#125;</code></td><td>Lookup by CAS number</td><td>All</td></tr>
+  <tr><td><code>GET /v1/substance/ke/&#123;ke_no&#125;</code></td><td>Lookup by KE number</td><td>All</td></tr>
+  <tr><td><code>GET /v1/substance/search?q=</code></td><td>Keyword search</td><td>All</td></tr>
+  <tr><td><code>GET /v1/substance/&#123;id&#125;</code></td><td>Lookup by ID</td><td>All</td></tr>
+  <tr><td><code>GET /v1/regulations/list?type=</code></td><td>List by regulation type</td><td>All</td></tr>
+  <tr><td><code>GET /v1/ghs/&#123;cas_no&#125;</code></td><td>GHS hazard data</td><td>PRO+</td></tr>
+  <tr><td><code>GET /v1/ghs/hazard/&#123;h_code&#125;</code></td><td>Search by H-code</td><td>PRO+</td></tr>
+  <tr><td><code>GET /v1/statistics</code></td><td>Database statistics</td><td>MEGA</td></tr>
+  <tr><td><code>GET /v1/changelog</code></td><td>Update history</td><td>All</td></tr>
+  <tr><td><code>GET /health</code></td><td>Health check</td><td>All</td></tr>
+</table>
+
+<h2>Pricing</h2>
+<table>
+  <tr><th>Plan</th><th>Price</th><th>Requests/mo</th><th>Unique Substances/mo</th><th>Rate Limit</th></tr>
+  <tr><td>BASIC</td><td>Free</td><td>200</td><td>200</td><td>30/min</td></tr>
+  <tr><td>PRO</td><td>$99/mo</td><td>3,000</td><td>1,500</td><td>60/min</td></tr>
+  <tr><td>ULTRA</td><td>$299/mo</td><td>25,000</td><td>5,000</td><td>200/min</td></tr>
+  <tr><td>MEGA</td><td>$899/mo</td><td>100,000</td><td>10,000</td><td>300/min</td></tr>
+</table>
+<p>Each plan limits the number of unique (distinct) substances accessible per month. Previously accessed substances remain available after reaching the cap. Free tier includes sandbox substances for testing.</p>
+
+<h2>Example Response</h2>
+<p>Look up Benzene (CAS 71-43-2) &mdash; available on the free tier:</p>
+<pre>{
+  "substance": {
+    "cas_no": "71-43-2",
+    "name_eng": "Benzene",
+    "name_kor": "벤젠",
+    "formula": "C6H6",
+    "flags": {
+      "is_toxic": true,
+      "is_priority": true,
+      "is_accident_prep": true,
+      "is_registration_req": true
+    }
+  },
+  "regulations": [
+    {
+      "class_type": "기존화학물질",
+      "notice_info": "환경부고시 제2014-237호"
+    }
+  ],
+  "ghs": {
+    "signal_word": "위험",
+    "pictograms": ["GHS02", "GHS07", "GHS08"],
+    "hazards": [
+      {"hazard_code": "H350", "category": "발암성", "hazard_class": "1A"}
+    ]
+  }
+}</pre>
+
+<h2>Substance Data</h2>
+<ul>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/benzene.html">Benzene (71-43-2)</a> &mdash; Toxic, carcinogenic, multiple regulations</li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/ethanol.html">Ethanol (64-17-5)</a> &mdash; Common chemical with GHS data</li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/formaldehyde.html">Formaldehyde (50-00-0)</a> &mdash; Toxic, CMR substance</li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/toluene.html">Toluene (108-88-3)</a> &mdash; Industrial solvent regulation</li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/lead-compounds.html">Lead Compounds (7439-92-1)</a> &mdash; Heavy metal regulation</li>
+</ul>
+
+<h2>Regulation Guides</h2>
+<ul>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/toxic-substances.html">Toxic Substances under K-REACH</a></li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/restricted-chemicals.html">Restricted Chemicals in Korea</a></li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/prohibited-substances.html">Prohibited Substances List</a></li>
+</ul>
+
+<h2>Resources</h2>
+<ul>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/k-reach-vs-eu-reach.html">K-REACH vs EU REACH Comparison</a></li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+<div class="cta-box">
+  <p><strong>Start building with Korean chemical regulatory data</strong></p>
+  <p>Free tier available &mdash; no credit card required</p>
+  <a href="https://rapidapi.com/han8212/api/k-reach-chemical-substance-api">Get API Key on RapidAPI</a>
+</div>
+
+<footer>
+  <p>K-REACH Chemical Substance API &mdash; Data from Korea Environment Corporation (KECO) via data.go.kr</p>
+  <p>
+    <a href="https://rapidapi.com/han8212/api/k-reach-chemical-substance-api">RapidAPI</a> &middot;
+    <a href="https://github.com/han-tagg/Korean-chemical-substance-api">GitHub</a> &middot;
+    <a href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">FAQ</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>

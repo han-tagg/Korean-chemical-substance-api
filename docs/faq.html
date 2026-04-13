@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-REACH FAQ — Chemical Regulation Questions Answered</title>
+  <meta name="description" content="Frequently asked questions about K-REACH, Korean chemical regulations, GHS classification, and the K-REACH Chemical Substance API.">
+  <meta name="keywords" content="K-REACH FAQ, Korean chemical regulation questions, what is K-REACH, KE number, GHS classification Korea, K-REACH vs EU REACH">
+  <link rel="canonical" href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">
+  <meta property="og:title" content="K-REACH FAQ — Chemical Regulation Questions Answered">
+  <meta property="og:description" content="Frequently asked questions about K-REACH, Korean chemical regulations, GHS classification, and the K-REACH Chemical Substance API.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">
+  <style>
+:root {
+  --ink: #1a1a2e;
+  --paper: #fafaf8;
+  --accent: #0a7e7a;
+  --accent-dark: #065a57;
+  --border: #e0e0dc;
+  --bg-box: #f3f3ee;
+  --code-bg: #2d2d2d;
+  --code-text: #f8f8f2;
+  --max-width: 720px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  font-size: 17px;
+}
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+h1 { font-size: 2em; margin-bottom: 12px; letter-spacing: -0.5px; }
+h2 { font-size: 1.5em; margin: 40px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+h3 { font-size: 1.15em; margin: 28px 0 12px; }
+p { margin-bottom: 16px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  font-size: 14px;
+  text-align: center;
+}
+nav a { margin: 0 12px; color: var(--ink); }
+nav a:hover { color: var(--accent); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 15px;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+th { background: var(--bg-box); font-weight: bold; }
+pre {
+  background: var(--code-bg);
+  color: var(--code-text);
+  padding: 20px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  margin: 16px 0 24px;
+  line-height: 1.5;
+}
+.cta-box {
+  background: var(--bg-box);
+  padding: 24px;
+  border-radius: 6px;
+  margin: 24px 0;
+  text-align: center;
+}
+.cta-box a {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+.cta-box a:hover { background: var(--accent-dark); text-decoration: none; }
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.badge-toxic { background: #fee2e2; color: #991b1b; }
+.badge-restricted { background: #fef3c7; color: #92400e; }
+.badge-prohibited { background: #fecaca; color: #7f1d1d; }
+.badge-priority { background: #dbeafe; color: #1e40af; }
+.badge-cmr { background: #f3e8ff; color: #6b21a8; }
+.subtitle { color: #666; font-size: 0.9em; margin-bottom: 24px; }
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+}
+ul { margin: 8px 0 16px 24px; }
+li { margin-bottom: 6px; }
+@media (max-width: 600px) {
+  h1 { font-size: 1.5em; }
+  table { font-size: 13px; }
+  th, td { padding: 8px 6px; }
+  nav a { margin: 0 6px; font-size: 13px; }
+}
+</style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is K-REACH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "K-REACH (Act on Registration and Evaluation of Chemicals) is South Korea's chemical substance management law, similar to EU REACH. It requires registration, evaluation, and authorization of chemical substances manufactured or imported into Korea. The law is administered by the Ministry of Environment through the Korea Environment Corporation (KECO)."
+      }
+    },    {
+      "@type": "Question",
+      "name": "How to check if a chemical is regulated in Korea?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can check any chemical's regulatory status under K-REACH using the K-REACH Chemical Substance API. Search by CAS number, KE number, or substance name. The API returns boolean flags (is_toxic, is_restricted, is_prohibited, etc.) for instant screening, plus detailed regulation records and GHS hazard data."
+      }
+    },    {
+      "@type": "Question",
+      "name": "What is the difference between K-REACH and EU REACH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both regulate chemical substances, but K-REACH is specific to South Korea while EU REACH covers the European Union. Key differences include: K-REACH uses KE numbers (not EC numbers), has different registration tonnage thresholds, classifies substances into 9 Korean-specific categories (toxic, restricted, prohibited, etc.), and is administered by KECO rather than ECHA. See our detailed comparison page for more."
+      }
+    },    {
+      "@type": "Question",
+      "name": "What are KE numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "KE numbers (Korea Existing Chemical numbers) are unique identifiers assigned to chemical substances registered in Korea's existing chemicals inventory. Format: KE-XXXXX. They serve a similar purpose to EC numbers in the EU system. The K-REACH API supports lookup by both CAS numbers and KE numbers."
+      }
+    },    {
+      "@type": "Question",
+      "name": "How often is the K-REACH database updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The K-REACH Chemical Substance API database is verified daily against official Korean government sources (Korea Environment Corporation via data.go.kr). When regulatory changes are detected, the database is updated automatically with a zero-downtime deployment pipeline. Response headers include X-Data-Version and X-Data-Last-Checked for transparency."
+      }
+    },    {
+      "@type": "Question",
+      "name": "What is GHS classification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GHS (Globally Harmonized System) is an international standard for classifying and labeling chemical hazards. Korean GHS classifications include signal words (Danger/Warning), pictogram codes (GHS01-GHS09), hazard statement codes (H-codes), and precautionary statement codes (P-codes). The K-REACH API provides complete Korean GHS classification data for 83%+ of registered substances."
+      }
+    },    {
+      "@type": "Question",
+      "name": "Are there free sandbox substances for testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Three substances are available with full response data on the free BASIC tier: Benzene (CAS 71-43-2), Ethanol (CAS 64-17-5), and Formaldehyde (CAS 50-00-0). These return complete regulatory classifications, GHS hazard data, and regulation details without requiring a paid subscription."
+      }
+    },    {
+      "@type": "Question",
+      "name": "How many chemicals does K-REACH cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The K-REACH Chemical Substance API covers 46,000+ chemical substances registered under Korea's chemical management system, with 49,000+ regulation records across 9 classification types and GHS hazard data for 83%+ of substances."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/">Home</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/benzene.html">Benzene</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/ethanol.html">Ethanol</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/formaldehyde.html">Formaldehyde</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/toxic-substances.html">Toxic</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/regulations/restricted-chemicals.html">Restricted</a>
+  <a href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">FAQ</a>
+</nav>
+<div class="container">
+
+<h1>K-REACH API &mdash; Frequently Asked Questions</h1>
+<p class="subtitle">Common questions about Korean chemical substance regulations and the K-REACH API</p>
+
+
+<h3>What is K-REACH?</h3>
+<p>K-REACH (Act on Registration and Evaluation of Chemicals) is South Korea's chemical substance management law, similar to EU REACH. It requires registration, evaluation, and authorization of chemical substances manufactured or imported into Korea. The law is administered by the Ministry of Environment through the Korea Environment Corporation (KECO).</p>
+
+<h3>How to check if a chemical is regulated in Korea?</h3>
+<p>You can check any chemical's regulatory status under K-REACH using the K-REACH Chemical Substance API. Search by CAS number, KE number, or substance name. The API returns boolean flags (is_toxic, is_restricted, is_prohibited, etc.) for instant screening, plus detailed regulation records and GHS hazard data.</p>
+
+<h3>What is the difference between K-REACH and EU REACH?</h3>
+<p>Both regulate chemical substances, but K-REACH is specific to South Korea while EU REACH covers the European Union. Key differences include: K-REACH uses KE numbers (not EC numbers), has different registration tonnage thresholds, classifies substances into 9 Korean-specific categories (toxic, restricted, prohibited, etc.), and is administered by KECO rather than ECHA. See our detailed comparison page for more.</p>
+
+<h3>What are KE numbers?</h3>
+<p>KE numbers (Korea Existing Chemical numbers) are unique identifiers assigned to chemical substances registered in Korea's existing chemicals inventory. Format: KE-XXXXX. They serve a similar purpose to EC numbers in the EU system. The K-REACH API supports lookup by both CAS numbers and KE numbers.</p>
+
+<h3>How often is the K-REACH database updated?</h3>
+<p>The K-REACH Chemical Substance API database is verified daily against official Korean government sources (Korea Environment Corporation via data.go.kr). When regulatory changes are detected, the database is updated automatically with a zero-downtime deployment pipeline. Response headers include X-Data-Version and X-Data-Last-Checked for transparency.</p>
+
+<h3>What is GHS classification?</h3>
+<p>GHS (Globally Harmonized System) is an international standard for classifying and labeling chemical hazards. Korean GHS classifications include signal words (Danger/Warning), pictogram codes (GHS01-GHS09), hazard statement codes (H-codes), and precautionary statement codes (P-codes). The K-REACH API provides complete Korean GHS classification data for 83%+ of registered substances.</p>
+
+<h3>Are there free sandbox substances for testing?</h3>
+<p>Yes. Three substances are available with full response data on the free BASIC tier: Benzene (CAS 71-43-2), Ethanol (CAS 64-17-5), and Formaldehyde (CAS 50-00-0). These return complete regulatory classifications, GHS hazard data, and regulation details without requiring a paid subscription.</p>
+
+<h3>How many chemicals does K-REACH cover?</h3>
+<p>The K-REACH Chemical Substance API covers 46,000+ chemical substances registered under Korea's chemical management system, with 49,000+ regulation records across 9 classification types and GHS hazard data for 83%+ of substances.</p>
+
+
+<h2>More Resources</h2>
+<ul>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/">K-REACH API Overview</a></li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/k-reach-vs-eu-reach.html">K-REACH vs EU REACH Comparison</a></li>
+  <li><a href="https://han-tagg.github.io/Korean-chemical-substance-api/data/benzene.html">Benzene &mdash; Example Substance Data</a></li>
+  <li><a href="https://github.com/han-tagg/Korean-chemical-substance-api">GitHub &mdash; Example Code</a></li>
+</ul>
+
+<div class="cta-box">
+  <p><strong>Try the API with free sandbox substances</strong></p>
+  <a href="https://rapidapi.com/han8212/api/k-reach-chemical-substance-api">Get API Key on RapidAPI</a>
+</div>
+
+<footer>
+  <p>K-REACH Chemical Substance API &mdash; Data from Korea Environment Corporation (KECO) via data.go.kr</p>
+  <p>
+    <a href="https://rapidapi.com/han8212/api/k-reach-chemical-substance-api">RapidAPI</a> &middot;
+    <a href="https://github.com/han-tagg/Korean-chemical-substance-api">GitHub</a> &middot;
+    <a href="https://han-tagg.github.io/Korean-chemical-substance-api/faq.html">FAQ</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>
