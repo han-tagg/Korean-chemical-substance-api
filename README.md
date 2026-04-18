@@ -358,7 +358,7 @@ Screen ingredient regulatory status under Korean chemical regulations. Pair with
 | Regulation Records | 40,000+ |
 | GHS Hazard Records | 9,000+ |
 | Substances with CAS | 40,000+ |
-| GHS Coverage | 83.2% |
+| GHS Coverage | Available for regulated substances |
 | Data Source | KECO via data.go.kr |
 | Languages | English, Korean |
 | Verification | Daily |
