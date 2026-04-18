@@ -35,15 +35,15 @@ We've collected, structured, and continuously verified chemical substance data f
 
 | Classification | Korean | Count | Description |
 |---------------|--------|-------|-------------|
-| Existing Chemicals | 기존화학물질 | 40,000+ | Pre-registered substances |
-| Toxic Substances | 유독물질 | 2,000+ | Substances with human/ecological toxicity |
-| Restricted Substances | 제한물질 | 200+ | Usage-restricted by conditions |
-| Prohibited Substances | 금지물질 | 90+ | Completely banned substances |
-| Priority Management | 중점관리물질 | 800+ | Substances requiring priority oversight |
-| Accident Preparedness | 사고대비물질 | 100+ | Emergency response substances |
-| CMR Substances | 발암·변이원성 | 300+ | Carcinogenic, mutagenic, reprotoxic |
-| Registration Required | 등록대상기존화학물질 | 500+ | Existing chemicals requiring registration |
-| Rotterdam Convention | 로테르담협약물질 | 50+ | PIC procedure substances |
+| Existing Chemicals | 기존화학물질 | 44,484 | Pre-registered substances |
+| Toxic Substances | 유독물질 | 2,378 | Substances with human/ecological toxicity |
+| Restricted Substances | 제한물질 | 280 | Usage-restricted by conditions |
+| Prohibited Substances | 금지물질 | 97 | Completely banned substances |
+| Priority Management | 중점관리물질 | 839 | Substances requiring priority oversight |
+| Accident Preparedness | 사고대비물질 | 105 | Emergency response substances |
+| CMR Substances | 발암·변이원성 | 364 | Carcinogenic, mutagenic, reprotoxic |
+| Registration Required | 등록대상기존화학물질 | 527 | Existing chemicals requiring registration |
+| Rotterdam Convention | 로테르담협약물질 | 60 | PIC procedure substances |
 
 ---
 
@@ -263,7 +263,7 @@ These CAS numbers return full data (including regulations & GHS) on the BASIC (f
 | CAS | Substance | Highlights |
 |-----|-----------|------------|
 | `71-43-2` | Benzene (벤젠) | Toxic + priority + 5 regulations + 8 GHS hazards |
-| `64-17-5` | Ethanol (에탄올) | Common chemical with GHS data |
+| `64-17-5` | Ethanol (에탄올) | Common chemical — no GHS classification in Korea |
 | `50-00-0` | Formaldehyde (포름알데히드) | Toxic + restricted + CMR |
 
 ---
@@ -354,11 +354,11 @@ Screen ingredient regulatory status under Korean chemical regulations. Pair with
 
 | Metric | Value |
 |--------|-------|
-| Total Substances | 40,000+ |
-| Regulation Records | 40,000+ |
-| GHS Hazard Records | 9,000+ |
-| Substances with CAS | 40,000+ |
-| GHS Coverage | Available for regulated substances |
+| Total Substances | 46,985 |
+| Regulation Records | 49,974 |
+| GHS Hazard Records | 9,688 |
+| Substances with CAS | 41,711 |
+| GHS Data | Available for regulated substances |
 | Data Source | KECO via data.go.kr |
 | Languages | English, Korean |
 | Verification | Daily |
